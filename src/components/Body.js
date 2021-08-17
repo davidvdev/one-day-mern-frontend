@@ -37,6 +37,25 @@ const Body = (props) => {
                         <div className="description">
                             <p>{weapon.description}</p>
                         </div>
+                        <div className="options">
+                            <button
+                                onClick={() => {
+                                    props.variantWeapon(weapon)
+                                    props.history.push("/create")
+                                }}
+                            >Create Variant</button>
+                            <button
+                                onClick={() => {
+                                    props.selectWeapon(weapon)
+                                    props.history.push("/edit")
+                                    }}
+                            >Edit Item</button>
+                            <button
+                                onClick={() => {
+                                    props.deleteWeapon(weapon)
+                                }}
+                            >Delete Item</button>
+                        </div>
                     </article>
                 ))}
             </div>

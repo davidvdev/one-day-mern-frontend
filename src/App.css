@@ -17,8 +17,10 @@ header {
 article {
   display: grid;
   grid-template-columns: repeat(2, 1fr );
-  grid-template-rows: repeat(2, 1fr );
+  grid-template-rows: 2fr 1.5fr 0.5fr;
   background-color: white;
+  margin: 2em 0;
+  padding: 1em;
 }
 article img {
   max-height: 150px;
@@ -28,6 +30,29 @@ article .stats ul {
   margin: 0;
   padding: 0;
 }
-article .description {
+article .description, .options {
   grid-column: 1 / span 2;
+}
+
+article .options button {
+  margin: 1em;
+}
+
+form {
+  background-color: white;
+  padding: 2em;
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+textarea {
+  height: 180px;
+  resize: none;
 }
