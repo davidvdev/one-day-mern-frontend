@@ -16,7 +16,7 @@ const Form = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form class="weaponForm" onSubmit={handleSubmit}>
             <label for="name">Weapon Name:</label>
             <input name="name" id="name" type="text" value={formData.name} onChange={handleChange}/>
 

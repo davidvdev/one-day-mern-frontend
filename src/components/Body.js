@@ -5,6 +5,67 @@ const Body = (props) => {
 
     const loading = () => <h4 className="loading">Loading Items... This may take a few seconds</h4>
 
+    const weaponIcon = (weapon) => {
+        switch(weapon.TL){
+            case 0:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-0-melee.svg"
+                    case "heavy": 
+                        return "img/tl-0-heavy.svg"
+                    default:
+                        return "img/tl-0-ranged.svg"
+                }
+            case 1:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-1-melee.svg"
+                    case "heavy": 
+                        return "img/tl-1-heavy.svg"
+                    default: 
+                        return "img/tl-1-ranged.svg"
+                }
+            case 2:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-2-melee.svg"
+                    case "heavy": 
+                        return "img/tl-2-heavy.svg"
+                    default: 
+                        return "img/tl-2-ranged.svg"
+                }
+            case 3:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-3-melee.svg"
+                    case "heavy": 
+                        return "img/tl-3-heavy.svg"
+                    default: 
+                        return "img/tl-3-ranged.svg"
+                }
+            case 4:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-4-melee.svg"
+                    case "heavy": 
+                        return "img/tl-4-heavy.svg"
+                    default: 
+                        return "img/tl-4-ranged.svg"
+                }
+            case 5:
+                switch (weapon.type) {
+                    case "melee": 
+                        return "img/tl-5-melee.svg"
+                    case "heavy": 
+                        return "img/tl-5-heavy.svg"
+                    default:
+                        return "img/tl-5-ranged.svg"
+                }
+            default:
+                return "img/default.svg"
+        }
+    }
+
     const loaded = () => {
         return(
             <>
@@ -13,11 +74,7 @@ const Body = (props) => {
                         <div className="card-top">
                             <div className="identifier">
                                 <h2>{weapon.name}</h2>
-                                <img src=
-                                    {weapon.type === "melee"
-                                        ? "stiletto.svg"
-                                        : "ray-gun.svg"
-                                    }
+                                <img src={weaponIcon(weapon)}
                                     alt={weapon.name}
                                 />
                             </div>
