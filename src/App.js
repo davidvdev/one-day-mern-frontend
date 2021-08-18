@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import './App.css';
+// import './App.css';
+import './App.sass'
 import {Route, Link, Switch} from 'react-router-dom'
 
 import Body from './components/Body'
@@ -91,10 +92,10 @@ function App() {
       <header>
         <h1>Stars Without Number</h1>
         <h2>unofficial item catalogue</h2>
-      </header>
       <Link to="/create">
         <button onClick={() => setSelectedWeapon(emptyWeapon)}>Add Weapon</button>
       </Link>
+      </header>
       <main>
         <Switch>
           <Route

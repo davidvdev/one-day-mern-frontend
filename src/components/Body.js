@@ -7,7 +7,7 @@ const Body = (props) => {
 
     const loaded = () => {
         return(
-            <div className="body">
+            <>
                 {weapons.map(weapon => (
                     <article key={weapon._id}>
                         <div className="identifier">
@@ -58,7 +58,7 @@ const Body = (props) => {
                         </div>
                     </article>
                 ))}
-            </div>
+            </>
         )
     }
     return weapons.length > 0 ? loaded() : loading();
