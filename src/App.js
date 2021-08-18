@@ -5,16 +5,39 @@ import {Route, Link, Switch} from 'react-router-dom'
 
 import Body from './components/Body'
 import Form from './components/Form';
+import Filter from './components/Filter'
 
 function App() {
 
   const url="https://one-day-mern-dv.herokuapp.com"
   const [weapons, setWeapons] = useState([])
+  const [filterView, setFilterView] = useState([])
 
   const getWeapons = () => {
     fetch(url + '/swnweapons')
     .then((response) => response.json())
-    .then((data) => setWeapons(data.data))
+    .then((data) => { 
+      setWeapons(data.data)
+      setFilterView(data.data)
+    })
+  }
+
+  const filter = (search) => {
+    let searchReturn = []
+    if(search === "" || search === []){
+      searchReturn = weapons
+    } else {
+      weapons.forEach((weapon) => {
+        let alteredSearch = search.toLowerCase()
+        let searchable = weapon.name.toLowerCase()
+
+        if(searchable.includes(alteredSearch) === true){
+          searchReturn = [...searchReturn, weapon]
+        }
+        return searchReturn
+      })
+    }
+    setFilterView(searchReturn)
   }
 
   const emptyWeapon = 
@@ -95,12 +118,13 @@ function App() {
       <Link to="/create">
         <button onClick={() => setSelectedWeapon(emptyWeapon)}>Add Weapon</button>
       </Link>
+      <Filter filter={filter}/>
       </header>
       <main>
         <Switch>
           <Route
             exact path="/"
-            render={(rp) => (<Body {...rp} weapons={weapons} selectWeapon={selectWeapon} selected={selectedWeapon} variantWeapon={variantWeapon} deleteWeapon={deleteWeapon}/>)}
+            render={(rp) => (<Body {...rp} weapons={filterView} selectWeapon={selectWeapon} selected={selectedWeapon} variantWeapon={variantWeapon} deleteWeapon={deleteWeapon}/>)}
           />
           <Route 
             exact path="/edit"

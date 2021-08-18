@@ -3,7 +3,7 @@ import React from 'react'
 const Body = (props) => {
     const {weapons} = props
 
-    const loading = () => <h4>Loading Items... This may take a few seconds</h4>
+    const loading = () => <h4 className="loading">Loading Items... This may take a few seconds</h4>
 
     const loaded = () => {
         return(
