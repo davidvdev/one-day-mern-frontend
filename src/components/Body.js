@@ -10,29 +10,31 @@ const Body = (props) => {
             <>
                 {weapons.map(weapon => (
                     <article key={weapon._id}>
-                        <div className="identifier">
-                            <h2>{weapon.name}</h2>
-                            <img src=
-                                {weapon.type === "melee"
-                                    ? "stiletto.svg"
-                                    : "ray-gun.svg"
-                                }
-                                alt={weapon.name}
-                            />
-                        </div>
-                        <div className="stats">
-                            <h3>Stats</h3>
-                            <ul>
-                                <li>Type: {weapon.type}</li>
-                                <li>Attribute: {weapon.attribute}</li>
-                                <li>Damage: {weapon.damage}</li>
-                                {weapon.type === "melee" ? 
-                                    <li>Shock: {weapon.shock}</li>
-                                    : <><li>Range: {weapon.range}</li><li>Magazine: {weapon.magazine}</li></>}
-                                <li>Encumberance: {weapon.encumberance}</li>
-                                <li>Tech Level: {weapon.TL}</li>
-                                <li>Cost: {weapon.cost}</li>
-                            </ul>
+                        <div className="card-top">
+                            <div className="identifier">
+                                <h2>{weapon.name}</h2>
+                                <img src=
+                                    {weapon.type === "melee"
+                                        ? "stiletto.svg"
+                                        : "ray-gun.svg"
+                                    }
+                                    alt={weapon.name}
+                                />
+                            </div>
+                            <div className="stats">
+                                <h3>Stats</h3>
+                                <ul>
+                                    <li><span>Type:</span> <span>{weapon.type}</span></li>
+                                    <li><span>Attribute:</span> <span>{weapon.attribute}</span></li>
+                                    <li><span>Damage:</span> <span>{weapon.damage}</span></li>
+                                    {weapon.type === "melee" ? 
+                                        <li><span>Shock:</span> <span>{weapon.shock}</span></li>
+                                        : <><li><span>Range:</span> <span>{weapon.range}</span></li><li><span>Magazine:</span> <span>{weapon.magazine}</span></li></>}
+                                    <li><span>Encumberance:</span> <span>{weapon.encumberance}</span></li>
+                                    <li><span>Tech Level:</span> <span>{weapon.TL}</span></li>
+                                    <li><span>Cost:</span> <span>{weapon.cost}</span></li>
+                                </ul>
+                            </div>
                         </div>
                         <div className="description">
                             <p>{weapon.description}</p>

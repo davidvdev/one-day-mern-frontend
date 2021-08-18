@@ -1,3 +1,7 @@
+$purple-1: #9012FD
+$purple-2: #660eb3
+$purple-3: #410874
+    
 html
     margin: 0
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
@@ -8,6 +12,7 @@ html
 header
     color: white
     text-align: center
+    margin-bottom: 1em
 
 main
     margin: 0 auto
@@ -16,28 +21,55 @@ main
     flex-wrap: wrap
     justify-content: space-evenly
 
+button 
+    padding: 0.5em
+    background-color: $purple-1
+    color: white
+    font-weight: bold
+    border: none
+    border-radius: 5px
+
+    &:hover
+        color: whitesmoke
+        background-color: $purple-2
+    &:active
+        color: white
+        background-color: $purple-3
+        box-shadow: 2px 2px gray
 
 article
     text-align: center
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    grid-template-rows: 2fr 1.5fr 0.5fr
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     background-color: white
     margin: 2em 1em
     padding: 1em
     max-width: 350px
 
-    img 
-        max-height: 150px
+    .card-top
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly
+        align-items: baseline
 
-    .stats 
+    img 
+        height: 120px
+    
+    .stats
+        width: 45%
+        
         ul
             list-style-type: none
             margin: 0
             padding: 0
 
+        li
+            display: flex
+            justify-content: space-between
+
     .description, .options
-        grid-column: 1 / span 2
+        // grid-column: 1 / span 2
 
     .options 
         button
