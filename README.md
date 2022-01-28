@@ -4,6 +4,7 @@ A simple CRUD web application that allows for the searching, editing, creating, 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The backend repo can be found [here](https://github.com/davidvdev/one-day-mern-backend).
 
+![site](./site.png)
 ---
 ## Tech Stack
 - Frontend
